@@ -26,3 +26,13 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#C1D4F1;
 }
+
+img{
+    width: 100%
+}
+
+.center_small{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
