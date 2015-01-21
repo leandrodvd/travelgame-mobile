@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+         <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css" />
+          <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.min.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <title>TRAVEL GAME</title>
+    </head>
+    <body>
+        <div data-role="page" id="loginpage">
+            <div role="main" class="ui-content">
+                <div id="logodiv_login" class="center_small">
+                    <img src="img/logo.png">
+                </div>
+                 <input type="email" id="email_login" placeholder="e-mail" >
+                 <input type="password" id="password_login" placeholder="senha" >
+                 <a href="#mainpage" class="ui-btn">ENTRAR</a>
+                 <a href="#registerpage" class="ui-btn">REGISTRAR</a>
+
+            </div>
+        </div>
+
+        <div data-role="page" id="registerpage">
+            <div role="main" class="ui-content">
+                 <div id="logodiv_register" class="center_small">
+                    <img src="img/logo.png">
+                </div>
+                 <input type="text" id="name_register" placeholder="nome" >
+                 <input type="email" id="email_register" placeholder="e-mail" >
+                 <input type="password" id="password_register" placeholder="senha" >
+                 <input type="password" id="passwordconfirmation_register" placeholder="confirme a senha" >
+                 <a href="#loginpage" class="ui-btn">REGISTRAR</a>
+                 <a href="#loginpage" class="ui-btn">CANCELAR</a>
+
+            </div>
+        </div>
+
+        <div data-role="page" id="mainpage">
+            <div data-role="header">
+                <h1>MINHAS VIAGENS</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#" data-icon="home" class="ui-btn-active ui-state-persist"></a></li>
+                        <li><a href="#rankingppage" data-icon="star"></a></li>
+                        <li><a href="#addtravelpage" data-icon="plus"></a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                <ul data-role="listview" data-inset="true">
+                    <li>PONTUAÇÃO TOTAL:<span class="ui-li-count">532</span></li>
+                    <li>PONTUAÇÃO NO ANO:<span class="ui-li-count">327</span></li>
+                    <li>RANKING GERAL:<span class="ui-li-count">3</span></li>
+                    <li>RANKING NO ANO:<span class="ui-li-count">2</span></li>
+                </ul>
+
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="list-divider">2014 DEZEMBRO</li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li>PORTUGAL E ESPANHA<span class="ui-li-count">121</span></li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li data-role="list-divider">2014 NOVEMBRO</li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li data-role="list-divider">2014 OUTUBRO</li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                    <li>FÉRIAS BAHIA<span class="ui-li-count">113</span></li>
+                </ul>
+            </div><!-- /main -->
+        </div><!-- /mainpage-->
+        
+
+        <div data-role="page" id="addtravelpage">
+            <div data-role="header">
+                <h1>ADICIONAR VIAGEM</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainpage" data-icon="home" ></a></li>
+                        <li><a href="#rankingppage" data-icon="star"></a></li>
+                        <li><a href="#" data-icon="plus" class="ui-btn-active ui-state-persist"></a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+                
+                <form>
+                    <ul data-role="listview" data-inset="true">
+                    <li class="ui-field-contain">
+                        <label for="travelname_addtravel">NOME DA VIAGEM:</label>
+                        <input type="text" name="travelname_addtravel" id="travelname_addtravel">
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="travelstart_addtravel">INÍCIO:</label>
+                        <input type="date" name="travelstart_addtravel" id="travelstart_addtravel">
+                    </li>
+                    <li class="ui-field-contain">
+                        <label for="travelend_addtravel">FIM:</label>
+                        <input type="date" name="travelend_addtravel" id="travelend_addtravel">
+                    </li>
+                    <li class="ui-field-contain">
+                        <fieldset data-role="controlgroup" >
+                            <legend>TIPO DE VIAGEM:</legend>
+                            
+                            <input name="traveltype_addtravel" id="traveltype_tourism_addtravel" value="tourism" checked="checked" type="radio">
+                            <label for="traveltype_tourism_addtravel">TURISMO</label>
+                            <label for="traveltype_work_addtravel">TRABALHO</label>
+                            <input name="traveltype_addtravel" id="traveltype_work_addtravel" value="work" type="radio">
+                            <label for="traveltype_other_addtravel">OUTRO</label>
+                            <input name="traveltype_addtravel" id="traveltype_other_addtravel" value="other" type="radio">
+                        </fieldset>
+                        
+                    </li>
+                    </ul>
+                <div class="ui-bar ui-bar-a">
+                    <h3>CIDADES VISITADAS</h3>
+                  </div>
+                  <a href="#" class="ui-btn  ui-icon-plus ui-btn-icon-left">Adicionar Cidade</a>
+                  <ul data-role="listview" data-inset="true">
+                    <li>São Paulo</li>
+                    <li>Joinville</li>
+                    <li>Salvador</li>
+                    <li>Rio de Janeiro</li>
+                    <li>Belo Horizonte</li>
+                </ul>
+                <a href="#" class="ui-btn">CONCLUIR</a>
+                </form>
+
+                
+            </div><!-- /main -->
+        </div><!-- /addtravelpage-->
+
+         <div data-role="page" id="rankingppage">
+            <div data-role="header">
+                <h1>RANKING</h1>
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#mainpage" data-icon="home" ></a></li>
+                        <li><a href="#" data-icon="star" class="ui-btn-active ui-state-persist"></a></li>
+                        <li><a href="#addtravelpage" data-icon="plus" ></a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div role="main" class="ui-content">
+<ul data-role="listview" data-inset="true">
+                    <li>PONTUAÇÃO TOTAL:<span class="ui-li-count">532</span></li>
+                    <li>PONTUAÇÃO NO ANO:<span class="ui-li-count">327</span></li>
+                    <li>RANKING GERAL:<span class="ui-li-count">3</span></li>
+                    <li>RANKING NO ANO:<span class="ui-li-count">2</span></li>
+                </ul>
+                <div class="ui-bar ui-bar-a">
+                    <h3>RANKING 2014</h3>
+                </div>
+                <ol data-role="listview" data-inset="true">
+                    <li>Carol<span class="ui-li-count">113</span></li>
+                    <li>Leandro<span class="ui-li-count">121</span></li>
+                    <li>Gustavo<span class="ui-li-count">113</span></li>
+                    <li>Giordana<span class="ui-li-count">113</span></li>
+                </ol>
+                
+            </div><!-- /main -->
+        </div><!-- /addtravelpage-->
+
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
