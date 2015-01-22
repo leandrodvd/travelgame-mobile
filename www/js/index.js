@@ -20,6 +20,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        this.bindActions();
+        this.setFormValidations();
     },
     // Bind Event Listeners
     //
@@ -27,23 +29,65 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
     },
     // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        
     },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
-
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
-
-        console.log('Received Event: ' + id);
+    bindActions: function(){
+        //REGISTER PAGE
+        $("#registerbtn_register").bind("click",this.registerSubmit);
+    },
+    //UI BIND FUNCTIONS
+    registerSubmit: function(){
+        if($("#registerform").valid()){
+            alert("VALID FORM");
+        }
+        else
+        {
+         alert("INVALID FORM");   
+        }
+    },
+    // SET FORM VALIDATIONS
+    setFormValidations: function(){
+        //REGISTER FORM
+        $("#registerform").validate({
+            rules:{
+                    name_register: "required",
+                    email_register: {
+                        required: true,
+                        email: true
+                        },
+                    password_register: {
+                        required: true,
+                        minlength: 5
+                    },
+                    passwordconfirmation_register: {
+                        required: true,
+                        minlength: 5,
+                        equalTo: "#password_register"
+                    },
+                    agree_register: "required"
+            },
+            messages: {
+                    name_register: "Insira seu nome",
+                    email_register: {
+                        required: "Preencha o seu email",
+                        email: "Forneça um email válido"
+                        },
+                    password_register: {
+                        required: "Informe uma senha",
+                        minlength: "A senha deve ter no mínimo 5 caracteres"
+                    },
+                    passwordconfirmation_register: {
+                        required: "Confirme a senha",
+                        minlength: "A senha deve ter no mínimo 5 caracteres",
+                        equalTo: "A confirmação de senha deve ser igual a senha"
+                    },
+                    agree_register: "Aceite os termos de uso"
+                    }
+                });
     }
+
 };

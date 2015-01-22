@@ -31,6 +31,7 @@
         <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
         <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/jquery.validate.js"></script>
         <title>TRAVEL GAME</title>
     </head>
     <body>
@@ -52,12 +53,54 @@
                  <div id="logodiv_register" class="center_small">
                     <img src="img/logo.png">
                 </div>
-                 <input type="text" id="name_register" placeholder="nome" >
-                 <input type="email" id="email_register" placeholder="e-mail" >
-                 <input type="password" id="password_register" placeholder="senha" >
-                 <input type="password" id="passwordconfirmation_register" placeholder="confirme a senha" >
-                 <a href="#loginpage" class="ui-btn">REGISTRAR</a>
-                 <a href="#loginpage" class="ui-btn">CANCELAR</a>
+                 <form id="registerform">
+                     <input type="text" id="name_register" name="name_register" placeholder="nome">
+                     <input type="email" id="email_register" name="email_register"  placeholder="e-mail">
+                     <input type="password" id="password_register" name="password_register" placeholder="senha">
+                     <input type="password" id="passwordconfirmation_register" name="passwordconfirmation_register" placeholder="confirme a senha">
+                     <label for="agree_register"> Concordo com os <a href="#">termos de uso</a></label>
+                     <input type="checkbox" id="agree_register" name="agree_register">
+                     <a id="registerbtn_register"class="ui-btn">REGISTRAR</a>
+                     <a href="#test" class="ui-btn">CANCELAR</a>
+                 </form>
+                 <script>
+                    $("#registerform").validate({
+                        rules:{
+                                name_register: "required",
+                                email_register: {
+                                    required: true,
+                                    email: true
+                                    },
+                                password_register: {
+                                    required: true,
+                                    minlength: 5
+                                },
+                                passwordconfirmation_register: {
+                                    required: true,
+                                    minlength: 5,
+                                    equalTo: "#password_register"
+                                },
+                                agree_register: "required"
+                        },
+                        messages: {
+                                name_register: "Insira seu nome",
+                                email_register: {
+                                    required: "Preencha o seu email",
+                                    email: "Forneça um email válido"
+                                    },
+                                password_register: {
+                                    required: "Informe uma senha",
+                                    minlength: "A senha deve ter no mínimo 5 caracteres"
+                                },
+                                passwordconfirmation_register: {
+                                    required: "Confirme a senha",
+                                    minlength: "A senha deve ter no mínimo 5 caracteres",
+                                    equalTo: "A confirmação de senha deve ser igual a senha"
+                                },
+                                agree_register: "Aceite os termos de uso"
+                                }
+                            });
+                 </script>
 
             </div>
         </div>
@@ -192,8 +235,46 @@
             </div><!-- /main -->
         </div><!-- /addtravelpage-->
 
+ <div data-role="page" id="test">
+            
+
+            <div role="main" class="ui-content">
+                <form class="cmxform" id="commentForm" method="get" action="">
+<fieldset>
+<legend>Please provide your name, email address (won't be published) and a comment</legend>
+<p>
+<label for="cname">Name (required, at least 2 characters)</label>
+<input id="cname" name="name" minlength="2" type="text" required>
+</p>
+<p>
+<label for="cemail">E-Mail (required)</label>
+<input id="cemail" type="email" name="email" required>
+</p>
+<p>
+<label for="curl">URL (optional)</label>
+<input id="curl" type="url" name="url">
+</p>
+<p>
+<label for="ccomment">Your comment (required)</label>
+<textarea id="ccomment" name="comment" required></textarea>
+</p>
+<p>
+<input class="submit" type="submit" value="Submit">
+</p>
+</fieldset>
+</form>
+<script>
+$("#commentForm").validate();
+</script>
+
+                </div>
+                </div>
         
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+
     </body>
 </html>
