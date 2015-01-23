@@ -64,42 +64,7 @@
                      <a href="#test" class="ui-btn">CANCELAR</a>
                  </form>
                  <script>
-                    $("#registerform").validate({
-                        rules:{
-                                name_register: "required",
-                                email_register: {
-                                    required: true,
-                                    email: true
-                                    },
-                                password_register: {
-                                    required: true,
-                                    minlength: 5
-                                },
-                                passwordconfirmation_register: {
-                                    required: true,
-                                    minlength: 5,
-                                    equalTo: "#password_register"
-                                },
-                                agree_register: "required"
-                        },
-                        messages: {
-                                name_register: "Insira seu nome",
-                                email_register: {
-                                    required: "Preencha o seu email",
-                                    email: "Forneça um email válido"
-                                    },
-                                password_register: {
-                                    required: "Informe uma senha",
-                                    minlength: "A senha deve ter no mínimo 5 caracteres"
-                                },
-                                passwordconfirmation_register: {
-                                    required: "Confirme a senha",
-                                    minlength: "A senha deve ter no mínimo 5 caracteres",
-                                    equalTo: "A confirmação de senha deve ser igual a senha"
-                                },
-                                agree_register: "Aceite os termos de uso"
-                                }
-                            });
+                    
                  </script>
 
             </div>
